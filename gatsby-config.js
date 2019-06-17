@@ -6,6 +6,10 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
+      resolve: `gatsby-plugin-styled-components`,
+      options: { },
+    },
+    {
       resolve: 'gatsby-source-wordpress',
       options: {
         // The base url to your WP site.
@@ -25,7 +29,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     {
       // Removes unused css rules
-      resolve:'gatsby-plugin-purgecss',
+      resolve: 'gatsby-plugin-purgecss',
       options: {
         // Activates purging in gatsby develop
         develop: true,
