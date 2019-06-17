@@ -58,7 +58,7 @@ query currentPageQuery {
         localFile {
           childImageSharp {
             fixed(width: 300, height: 300) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp_tracedSVG
             }
           }
         }
