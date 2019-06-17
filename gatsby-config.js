@@ -5,10 +5,7 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: { },
-    },
+    `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-source-wordpress',
       options: {
