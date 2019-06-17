@@ -1,4 +1,5 @@
-# Gatsby v2 WordPress Starter
+# Gatsby WordPress Starter
+#### Last Updated: 2019-06-17
 
 This starter is forked from the
 [gatsby-starter-netlify-cms](https://github.com/netlify-templates/gatsby-starter-netlify-cms)
@@ -10,8 +11,7 @@ Demo: https://gatsby-starter-wordpress.netlify.com/
 
 ## Use It Now
 
-    gatsby new NAME https://github.com/GatsbyCentral/gatsby-starter-wordpress
-
+* Run `yarn install` to install all of the dependencies for the site.
 * Edit `gatsby-config.js`, change `baseUrl`
   - Make sure you have at least 1 post and 1 page on your WordPress site
   - Make sure at least 1 post has at least 1 tag
@@ -19,6 +19,12 @@ Demo: https://gatsby-starter-wordpress.netlify.com/
 * Rejoice
   - For more information on the source plugin, check out the [gatsby-source-wordpress](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-source-wordpress) repository page
   - File any [issues here](https://github.com/GatsbyCentral/gatsby-starter-wordpress/issues)
+* When ready, run `gatsby develop` to run the development server to test out the site.
+
+## WordPress Credentials
+* The default URL under `gatsby-config.js` points to a digital ocean server running WordPress at `138.68.237.156`.
+* The project is currently running under Liam McMains' personal Digital Ocean account. Please contact him at lmcmains@codeauthority.com or liam@mcmains.net if you need access to the project.
+* Otherwise, you can spin up your own droplet by clicking `Create` on Digital Ocean, going to `Marketplace`, and selecting the WordPress image.
 
 ### Known Limitations
 
@@ -32,12 +38,3 @@ Demo: https://gatsby-starter-wordpress.netlify.com/
 ## CSS Processing
 
 This plugin uses [gatsby-plugin-purgecss](https://www.gatsbyjs.org/packages/gatsby-plugin-purgecss/) and [bulma](https://bulma.io/). The bulma build would otherwise be ~170K which adds 170K to each of your built HTML pages. However, with purgecss this is reduced 90%.
-
-## Contributors
-
-This starter was forked from the netlify starter by the
-[GatsbyCentral](https://www.gatsbycentral.com/) crew. Additional contributions
-were gratefully received from the following folks:
-
-* https://github.com/tomByrer
-* https://github.com/dajocarter

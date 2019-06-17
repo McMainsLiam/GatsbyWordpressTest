@@ -7,7 +7,6 @@ import { default as Image } from "gatsby-image"
 class HomePage extends Component {
     render() {
         // Using optional chaining, if any of these properties are undefined then it will return undefined instead of giving an error
-        // eslint-disable-next-line
         let image = this.props?.data?.wordpressPage?.acf?.image?.localFile?.childImageSharp?.fixed;
 
         // Create a styled title tag
@@ -15,6 +14,12 @@ class HomePage extends Component {
             font-size: 20px;
             font-weight: bold;
             margin-bottom: 20px;
+        `;
+
+        // Create a styled subtitle tag
+        const Subtitle = styled.h1`
+          font-size: 16px;
+          margin-bottom: 20px;
         `;
 
         // Create a styled container tag
@@ -28,8 +33,11 @@ class HomePage extends Component {
         return (
             <Layout>
                 <PaddedContainer>
-                    <Title> Test String: {this.props.data?.wordpressPage?.acf?.test_string } </Title>
-                    <Image fixed={image} />
+                    <Title> Title: {this.props.data?.wordpressPage?.acf?.site_title } </Title>
+                    <Subtitle> {this.props.data?.wordpressPage?.acf?.site_subtitle } </Subtitle>
+                    {image && 
+                      <Image fixed={image} />
+                    }
                 </PaddedContainer>
             </Layout>
         );
@@ -39,25 +47,26 @@ class HomePage extends Component {
 // This query is responsible for pulling data about a page using the pageID that wordpress assigns it
 export const query = graphql`
 query currentPageQuery {
-    wordpressPage(wordpress_id: {eq: 7}) {
-      title
-      content
-      slug
-      date(formatString: "MMMM DD, YYYY")
-      acf {
-        test_string
-        image {
-          localFile {
-            childImageSharp {
-              fixed(width: 300, height: 300) {
-                ...GatsbyImageSharpFixed
-              }
+  wordpressPage(wordpress_id: {eq: 7}) {
+    title
+    content
+    slug
+    date(formatString: "MMMM DD, YYYY")
+    acf {
+      site_title
+      image {
+        localFile {
+          childImageSharp {
+            fixed(width: 300, height: 300) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
+        source_url
       }
+      site_subtitle
     }
-  }  
-`;
+  }
+}`;
 
 export default HomePage;
